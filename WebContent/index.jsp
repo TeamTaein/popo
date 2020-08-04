@@ -27,7 +27,7 @@
 	<a href="${ctxPath }/article/write.do">[글 작성]</a>
 	<a href="/m_board/article/list.do">[게시글목록보기]</a>
 </u:isLogin>
-
+ 
 <u:notLogin>
 	<a href="join.do">[회원가입하기]</a>
 	<a href="login.do">[로그인하기]</a>
