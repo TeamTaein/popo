@@ -19,7 +19,7 @@ import org.apache.commons.pool2.impl.GenericObjectPoolConfig;
 import com.mysql.cj.jdbc.AbandonedConnectionCleanupThread;
 
 
-//@WebListener -> web.xml에 등록해놓음
+//@WebListener -> web.xml에 등록해놓음 
 public class DBCPInitListener implements ServletContextListener {
 
   

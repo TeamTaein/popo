@@ -2,7 +2,7 @@ package jdbc;
 
 import java.sql.Connection;
 
-public class JdbcUtil {
+public class JdbcUtil { 
 	// p.434 에 있는 3개의 메소드 대신함
 	public static void close(AutoCloseable... resource) {
 		try {
