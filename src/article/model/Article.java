@@ -11,7 +11,7 @@ public class Article {
 	private Date regDate;
 	private Date modifiedDate;
 	private int readCount;
-	
+	 
 	public Article(Integer number, Writer writer, String localName, String title, Date regDate, Date modifiedDate,
 			int readCount) {
 		super();

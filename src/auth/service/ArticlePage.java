@@ -61,7 +61,7 @@ public class ArticlePage {
 	
 	public int getCurrentPage() {
 		return currentPage;
-	}
+	} 
 	
 	public int getTotalPages() {
 		return totalPages;

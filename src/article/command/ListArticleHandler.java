@@ -8,7 +8,7 @@ import auth.service.ListArticleService;
 import mvc.controller.CommandHandler;
 
 public class ListArticleHandler implements CommandHandler {
-	
+	 
 	private ListArticleService listService = new ListArticleService();
 
 	@Override

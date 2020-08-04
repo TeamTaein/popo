@@ -11,7 +11,7 @@ public class ArticleContent {
 		this.number = number;
 		this.content = content;
 	}
-
+ 
 
 	public Integer getNumber() {
 		return number;

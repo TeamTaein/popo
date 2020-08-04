@@ -8,7 +8,7 @@ import article.model.ArticleContent;
 import jdbc.JdbcUtil;
 
 public class ArticleContentDao {
-	
+	 
 	public ArticleContent insert(Connection conn, ArticleContent content) throws SQLException{
 		PreparedStatement pstmt = null;
 		

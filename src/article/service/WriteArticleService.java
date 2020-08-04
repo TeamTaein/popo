@@ -14,7 +14,7 @@ public class WriteArticleService {
 	
 	private ArticleDao articleDao = new ArticleDao();
 	private ArticleContentDao contentDao = new ArticleContentDao();
-	
+	 
 	public Integer write(WriteRequest req) {
 		Connection conn = null;
 		try {

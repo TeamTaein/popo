@@ -103,7 +103,7 @@ public class ArticleDao {
 			return result;
 		} finally {
 			JdbcUtil.close(rs, pstmt);
-		}				
+		}			 	
 	}
 	
 	//convertArticle 메서드는 ResultSet에서 데이터를 읽어와 Article 객체를 생성
