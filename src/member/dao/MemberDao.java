@@ -17,7 +17,7 @@ public class MemberDao {
 		ResultSet rs = null;
 		try {
 			pstmt = conn.prepareStatement(
-					"select * from member where member_id = ?");
+					"select * from member where member_email = ?");
 			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
 			Member member = null;
