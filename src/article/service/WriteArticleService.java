@@ -70,7 +70,7 @@ public class WriteArticleService {
 	
 	private Article toArticle(WriteRequest req) {
 		Date now = new Date();
-		return new Article(null, req.getWriter(),req.getTitle(),req.getContent(), now, now, 0);
+		return new Article(null, req.getWriter(),req.getLocal(),req.getTitle(), now, now, 0);
 	}
 }
 
