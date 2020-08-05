@@ -25,7 +25,7 @@ public class ListArticleService {
 			
 			//ArticlePage 객체 리턴
 			return new ArticlePage(total, pageNum, size, content);
-			
+	 		
 		} catch (SQLException e) {
 			e.printStackTrace();
 			throw new RuntimeException(e);

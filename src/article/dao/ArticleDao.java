@@ -59,7 +59,7 @@ public class ArticleDao {
 			JdbcUtil.close(rs, stmt, pstmt);
 		}
 	}
-
+ 
 	private Timestamp toTimestamp(Date date) {		
 		return new Timestamp(date.getTime());
 	}

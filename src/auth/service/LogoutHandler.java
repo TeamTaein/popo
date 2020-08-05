@@ -14,7 +14,7 @@ public class LogoutHandler implements CommandHandler {
 	}
 	res.sendRedirect("index.jsp");
 	return null;
-	
+	 
 	}
 
 }

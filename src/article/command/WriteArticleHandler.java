@@ -14,7 +14,7 @@ import article.service.WriteRequest;
 import auth.service.User;
 import mvc.controller.CommandHandler;
 
-public class WriteArticleHandler implements CommandHandler {
+public class WriteArticleHandler implements CommandHandler { 
 
 	private static final String FORM_VIEW = "/WEB-INF/view/newArticleForm.jsp";
 	private WriteArticleService writeService = new WriteArticleService();

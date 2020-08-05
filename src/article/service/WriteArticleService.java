@@ -66,7 +66,7 @@ public class WriteArticleService {
 		} finally {
 			JdbcUtil.close(conn);
 		}
-	}
+	} 
 	 
 	private Article toArticle(WriteRequest req) {
 		Date now = new Date();

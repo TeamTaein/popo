@@ -19,7 +19,7 @@ public WriteRequest(Writer writer, String title, String content, String local) {
 		this.content = content;
 		this.local = local;
 		
-	}
+	} 
 	
 	public WriteRequest(Writer writer, String title, String content, String local, String fileName) {
 		
