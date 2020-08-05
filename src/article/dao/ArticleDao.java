@@ -26,11 +26,11 @@ public class ArticleDao {
 			//insert 쿼리를 실행하여 테이블에 데이터 삽입
 			//article_no 컬럼은 자동증가 컬럼이므로 값 지정하지 않음
 			pstmt = conn.prepareStatement("insert into article "
-					+ "(wrtier_id, local_name, title, regdate, moddate, read_cnt)"
+					+ "(writer_id, local_name, title, regdate, moddate, read_cnt)"
 					+ "values (?,?,?,?,?,0)");
 			pstmt.setString(1, article.getWriter().getId());
-			pstmt.setString(2, article.getLocalName());
-			pstmt.setString(3, article.getTitle());
+			pstmt.setString(2, article.getLocalName());	
+			pstmt.setString(3, article.getTitle());					
 			pstmt.setTimestamp(4, toTimestamp(article.getRegDate()));
 			pstmt.setTimestamp(5, toTimestamp(article.getModifiedDate()));
 			int insertedCount = pstmt.executeUpdate();
@@ -110,9 +110,9 @@ public class ArticleDao {
 	private Article convertArticle(ResultSet rs) throws SQLException {
 		return new Article(rs.getInt("article_no"),
 				new Writer(						
-						rs.getString("writer_id"),
-						rs.getString("writer_name")), //필요한가?
-				rs.getString("localName"),
+						rs.getString("writer_id")
+						), 
+				rs.getString("local_name"),
 				rs.getString("title"),
 				toDate(rs.getTimestamp("regdate")),
 				toDate(rs.getTimestamp("moddate")),
@@ -121,6 +121,38 @@ public class ArticleDao {
 
 	private Date toDate(Timestamp timestamp) {
 		return new Date(timestamp.getTime());
+	}
+	
+	//특정 번호에 해당하는 게시글 데이터 읽기
+	public Article selectById(Connection conn, int no) throws SQLException {
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try {
+			pstmt = conn.prepareStatement(
+					"select * from article where article_no=?");
+			pstmt.setInt(1, no);
+			rs = pstmt.executeQuery();
+			Article article = null;
+			if(rs.next()) {				
+				article = convertArticle(rs);
+			}
+			return article;
+		} finally {
+			JdbcUtil.close(rs);
+			JdbcUtil.close(pstmt);
+		}
+	}
+	
+	//특정 번호에 해당하는 게시글 데이터의 조회수 증가하기
+	public void increaseReadCount(Connection conn, int no) throws SQLException{
+		try (PreparedStatement pstmt = 
+				conn.prepareStatement(
+				"update article set read_cnt = read_cnt + 1 " 
+				+ "where article_no = ?")) {
+					pstmt.setInt(1, no);
+					pstmt.executeUpdate();
+			}
 	}
 	
 }

@@ -2,19 +2,15 @@ package article.model;
 
 public class Writer {
 	
-	private String id;
-	private String name;
+	private String id;	
 	
-	public Writer(String id, String name) {
-		this.id = id;
-		this.name = name;
+	public Writer(String id) {
+		this.id = id;		
 	}
 	
 	public String getId() {
 		return id;
 	}
 	 
-	public String getName() {
-		return name;
-	}
+	
 }
