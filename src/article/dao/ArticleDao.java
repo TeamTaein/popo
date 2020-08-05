@@ -112,7 +112,7 @@ public class ArticleDao {
 				new Writer(						
 						rs.getString("writer_id")
 						), 
-				rs.getString("localName"),
+				rs.getString("local_name"),
 				rs.getString("title"),
 				toDate(rs.getTimestamp("regdate")),
 				toDate(rs.getTimestamp("moddate")),

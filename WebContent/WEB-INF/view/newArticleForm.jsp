@@ -24,7 +24,7 @@
 	제목: <br /><input type="text" name="title" value="${param.title }" />
 	<c:if test="${errors.title }">제목을 입력하세요</c:if>
 	<br />
-	지역 : <br /><input type="text" name="localName" value="${param.localName }" />
+	지역 : <br /><input type="text" name="local_name" value="${param.local_name }" />
 </p>
 <p>
 	내용: <br />
