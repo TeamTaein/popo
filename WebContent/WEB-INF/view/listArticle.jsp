@@ -28,7 +28,7 @@
 		</td>
 		
 	</tr>	
-	
+	 
 	<tr>
 		<td>번호</td>
 		<td>제목</td>
@@ -48,11 +48,11 @@
 		<td>${article.number }</td>
 		<td>
 			<a href="read.do?no=${article.number }&pageNo=${articlePage.currentPage}">
-				<c:out value="${article.localName }"></c:out>
+				<c:out value="${article.title }"></c:out>
 			</a>
 		</td>
 		
-		<td>${article.title }</td>
+		<td>${article.localName }</td>
 		<td>${article.writer.id }</td>
 		<td>${article.readCount }</td>
 	</tr>

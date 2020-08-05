@@ -18,7 +18,7 @@ public class ArticlePage {
 		this.total = total;
 		this.currentPage = currentPage;
 		this.content = content;
-		
+		 
 		//전체 게시글 개수가 0개면 
 		if(total == 0) {
 			totalPages = 0;	// 전체 페이지 개수 0

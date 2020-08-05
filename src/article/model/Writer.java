@@ -11,6 +11,6 @@ public class Writer {
 	public String getId() {
 		return id;
 	}
-	 
+	  
 	
 }

@@ -25,7 +25,7 @@ public class ArticleContentDao {
 			} else {
 				return null;
 			}
-		} finally {
+		} finally { 
 			JdbcUtil.close(pstmt);
 		}
 	}
