@@ -154,6 +154,21 @@ public class ArticleDao {
 					pstmt.executeUpdate();
 			}
 	}
+	public int update(Connection conn, int no, String title, String localName) throws SQLException{
+		try(PreparedStatement pstmt=
+				conn.prepareStatement(
+						"update article set title=?, local_name=?, moddate = now()"+
+						"where article_no =?")){
+			pstmt.setString(1, title);
+			pstmt.setString(2, localName );
+			
+			pstmt.setInt(3,no);
+			return pstmt.executeUpdate();
+		}
+	}
+
+
+	
 	
 }
 

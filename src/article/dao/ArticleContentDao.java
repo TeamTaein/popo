@@ -51,6 +51,20 @@ public class ArticleContentDao {
 			JdbcUtil.close(rs, pstmt);
 		}
 	}
+	
+	
+	//게시글 데이터 수정 기능
+	public int update(Connection conn, int no,String content, String FileName)
+			throws SQLException {
+		try (PreparedStatement pstmt = conn.prepareStatement(
+				"UPDATE article SET content=?, FileName=?, moddate=now()"
+						+ " WHERE article_no=?")) {
+			pstmt.setString(1, content);
+			pstmt.setInt(2, no);
+			
+			return pstmt.executeUpdate();
+		}
+	}
 
 	
 }
