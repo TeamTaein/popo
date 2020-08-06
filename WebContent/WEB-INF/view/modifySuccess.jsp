@@ -2,7 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<%@ taglib prefix="u" tagdir="/WEB-INF/tags" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,34 +16,16 @@
 <title>Insert title here</title>
 </head>
 <body>
-<table>
-<tr>
-	<td>작성자</td>
-	<td>${articleData.article.writer.id }</td>
-</tr>
-<tr>
-	<td>제목</td>
-	<td><c:out value="${articleData.article.title }"></c:out></td>
-</tr>
-<tr>
-	<td>내용</td>
-	<td style="white-space: pre-wrap;"><c:out value="${articleData.content }" /></td>
-	<%-- 
-	<td><u:pre value="${articleData.content }"/></td>
-	 --%>
-</tr>
-<tr>
-	<td colspan="2">
-		<c:set var="pageNo" value="${empty param.pageNo ? '1' : param.pageNo }"></c:set>
-		<a href="list.do?pageNo=${pageNo }">[목록]</a>
-		<c:if test="${authUser.email == articleData.article.writer.id }">
-			<a href="modify.do?no=${articleData.article.number }">[게시글 수정]</a>
-			<a href="delete.do?no=${articleData.article.number }">[게시글 삭제]</a>
-		
-		</c:if>
-	
-	</td>
-</tr>
-</table>
+게시글을 수정했습니다.
+
+<br />
+
+<a href="${ctxPath }/article/list.do">[게시글 목록보기]</a>
+<a href="${ctxPath }/article/read.do?no=${modReq.articleNumber }">[게시글 내용보기]</a>
 </body>
 </html>
+
+
+
+
+
